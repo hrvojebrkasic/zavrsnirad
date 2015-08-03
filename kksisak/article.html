@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>KK Sisak</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="public/css/bootstrap.min.css" rel="stylesheet">
+    <link href="public/css/styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+</head>
+<body>
+<!-- navigacija -->
+<div class="navbar navbar-inverse">
+    <div class="container">
+
+        <a href="index.html" class="navbar-brand">KK Sisak</a>
+        <button class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
+            <span class = "icon-bar"></span>
+            <span class = "icon-bar"></span>
+            <span class = "icon-bar"></span>
+        </button>
+        <nav class="collapse navbar-collapse navHeaderCollapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="index.html">Početna</a></li>
+                <li><a href="article.html">Novosti</a></li>
+                <li class="dropdown">
+                    <a href="#" class ="dropdown-toggle" data-toggle = "dropdown">O nama <b class = "caret"></b></a>
+                    <ul class = "dropdown-menu">
+                        <li><a href="povijest.html">Povijest</a></li>
+                        <li><a href="struka.html">Struka</a></li>
+                        <li><a href="uprava.html">Uprava</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class ="dropdown-toggle" data-toggle = "dropdown">B liga centar <b class = "caret"></b></a>
+                    <ul class = "dropdown-menu">
+                        <li><a href="tablica.html">Tablica</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class ="dropdown-toggle" data-toggle = "dropdown">Mladi <b class = "caret"></b></a>
+                    <ul class = "dropdown-menu">
+                        <li><a href="djevojcice12.html">Djevojčice U-12</a></li>
+                        <li><a href="djecaci12.html">Dječaci U-12</a></li>
+                        <li><a href="kadetkinje.html">Kadetkinje</a></li>
+                        <li><a href="mladi-kadeti.html">Mlađi kadeti</a></li>
+                        <li><a href="kadeti.html">Kadeti</a></li>
+                        <li><a href="juniori.html">Juniori</a></li>
+                    </ul>
+                </li>
+                <li class = "dropdown">
+                    <a href="#" class ="dropdown-toggle" data-toggle="dropdown">Treninzi <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="raspored.html">Raspored</a></li>
+                        <li><a href="dvorane.html">Dvorane</a></li>
+                    </ul>
+                </li>
+                <li><a href="#contact" data-toggle="modal">Kontakt</a></li>
+            </ul>
+        </nav>
+    </div>
+</div>
+
+<div class="modal fade" id="contact" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h2>Kontaktirajte nas</h2>
+            </div>
+            <div class="modal-body">
+                <div class="container">
+                    <div class="row">
+                        <address>
+                            <h3>Košarkaški klub "Sisak"</h3>
+                            <ul class="list-icons">
+                                <li title="Adresa">
+                                    <i class="fa fa-map-marker pr-10 fa-big text-colored"></i>
+                                    Stjepana i Antuna Radića 41, Sisak
+                                </li>
+                                <li title="Telefon1">
+                                    <i class="fa fa-phone pr-10 fa-big text-colored"></i>
+                                    Telefon: 044/524-338
+                                </li>
+                                <li title="Telefon2">
+                                    <i class="fa fa-phone pr-10 fa-big text-colored"></i>
+                                    Telefon: 044/500-096
+                                </li>
+                                <li title="Fax">
+                                    <i class="fa fa-fax pr-10 fa-med text-colored"></i>
+                                    Faks: 044/500-095
+                                </li>
+                                <li title="Email">
+                                    <i class="fa fa-envelope pr-10 fa-med text-colored"></i>
+                                    <a href="mailto:kosarkaski.klub.sisak@gmail.com">kosarkaski.klub.sisak@gmail.com</a>
+                                </li>
+                            </ul>
+                        </address>
+                        <form role="form" action="" method="post" >
+                            <div class="col-md-6">
+                                <!--<div class="well well-sm"><strong><i class="glyphicon glyphicon-ok form-control-feedback"></i> Required Field</strong></div>-->
+                                <div class="form-group">
+                                    <label for="InputName">Ime i prezime:</label>
+                                    <input type="text" class="form-control" name="InputName" id="InputName" placeholder="Unesite ime i prezime:" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="InputEmail">Vaš email:</label>
+                                    <input type="email" class="form-control" id="InputEmail" name="InputEmail" placeholder="Unesite email:" required  >
+                                </div>
+                                <div class="form-group">
+                                    <label for="InputMessage">Poruka:</label>
+                                    <textarea name="InputMessage" id="InputMessage" class="form-control" rows="5" required></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label for="InputReal">What is 4+3? (Simple Spam Checker)</label>
+                                    <input type="text" class="form-control" name="InputReal" id="InputReal" required>
+                                </div>
+                                <input type="submit" name="submit" id="submit" value="Submit" class="btn btn-info pull-right">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-9">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="page-header">
+                        <h3>Naslov članka <small>datum postavljanja</small></h3>
+                    </div>
+                    <img class="img" src="img/nature.jpg" width="100%">
+                    <article>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel dolor malesuada, viverra felis vitae, feugiat tortor. Sed varius quis mi et porttitor. Etiam ac dolor in erat semper imperdiet consequat a justo. Maecenas tincidunt sit amet tortor at egestas. Donec tincidunt venenatis dolor, semper tempus lorem imperdiet nec. Proin sed purus non tellus egestas vehicula. Ut at erat risus. Aliquam id ipsum vel dolor dignissim commodo. Aenean commodo sem quis quam maximus, ut imperdiet felis ultrices. Pellentesque ullamcorper ipsum nunc, sit amet viverra dui pulvinar vel. Phasellus auctor massa eget scelerisque tincidunt. Sed quis augue massa. Ut vestibulum erat a felis scelerisque, a bibendum mauris blandit. Quisque turpis felis, egestas sed metus eu, molestie ultrices mi. Maecenas nulla odio, rhoncus eu dui sed, sodales gravida velit. </article>
+                    <h4>Podnaslov</h4>
+                    <article>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel dolor malesuada, viverra felis vitae, feugiat tortor. Sed varius quis mi et porttitor. Etiam ac dolor in erat semper imperdiet consequat a justo. Maecenas tincidunt sit amet tortor at egestas. Donec tincidunt venenatis dolor, semper tempus lorem imperdiet nec. Proin sed purus non tellus egestas vehicula. Ut at erat risus. Aliquam id ipsum vel dolor dignissim commodo. Aenean commodo sem quis quam maximus, ut imperdiet felis ultrices. Pellentesque ullamcorper ipsum nunc, sit amet viverra dui pulvinar vel. Phasellus auctor massa eget scelerisque tincidunt. Sed quis augue massa. Ut vestibulum erat a felis scelerisque, a bibendum mauris blandit. Quisque turpis felis, egestas sed metus eu, molestie ultrices mi. Maecenas nulla odio, rhoncus eu dui sed, sodales gravida velit. </article>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="list-group-item">
+                <a href="#" class="list-group-item active">
+                    <h4 class="list-group-item-heading">lorem ipsum</h4>
+                    <article class="list-group-item-heading">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel dolor malesuada, viverra felis vitae, feugiat tortor. Sed varius quis mi et porttitor. Etiam ac dolor in erat semper imperdiet consequat a justo. Maecenas tincidunt sit amet tortor at egestas. Donec tincidunt venenatis dolor, semper tempus lorem imperdiet nec. Proin sed purus non tellus egestas vehicula. Ut at erat risus. Aliquam id ipsum vel dolor dignissim commodo. Aenean commodo sem quis quam maximus, ut imperdiet felis ultrices. Pellentesque ullamcorper ipsum nunc, sit amet viverra dui pulvinar vel. Phasellus auctor massa eget scelerisque tincidunt. Sed quis augue massa. Ut vestibulum erat a felis scelerisque, a bibendum mauris blandit. Quisque turpis felis, egestas sed metus eu, molestie ultrices mi. Maecenas nulla odio, rhoncus eu dui sed, sodales gravida velit. </article>
+                </a>
+                <a href="#" class="list-group-item">
+                    <h4 class="list-group-item-heading">lorem ipsum</h4>
+                    <article class="list-group-item-heading">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel dolor malesuada, viverra felis vitae, feugiat tortor. Sed varius quis mi et porttitor. Etiam ac dolor in erat semper imperdiet consequat a justo. Maecenas tincidunt sit amet tortor at egestas. Donec tincidunt venenatis dolor, semper tempus lorem imperdiet nec. Proin sed purus non tellus egestas vehicula. Ut at erat risus. Aliquam id ipsum vel dolor dignissim commodo. Aenean commodo sem quis quam maximus, ut imperdiet felis ultrices. Pellentesque ullamcorper ipsum nunc, sit amet viverra dui pulvinar vel. Phasellus auctor massa eget scelerisque tincidunt. Sed quis augue massa. Ut vestibulum erat a felis scelerisque, a bibendum mauris blandit. Quisque turpis felis, egestas sed metus eu, molestie ultrices mi. Maecenas nulla odio, rhoncus eu dui sed, sodales gravida velit. </article>
+                </a>
+                <a href="#" class="list-group-item">
+                    <h4 class="list-group-item-heading">lorem ipsum</h4>
+                    <article class="list-group-item-heading">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel dolor malesuada, viverra felis vitae, feugiat tortor. Sed varius quis mi et porttitor. Etiam ac dolor in erat semper imperdiet consequat a justo. Maecenas tincidunt sit amet tortor at egestas. Donec tincidunt venenatis dolor, semper tempus lorem imperdiet nec. Proin sed purus non tellus egestas vehicula. Ut at erat risus. Aliquam id ipsum vel dolor dignissim commodo. Aenean commodo sem quis quam maximus, ut imperdiet felis ultrices. Pellentesque ullamcorper ipsum nunc, sit amet viverra dui pulvinar vel. Phasellus auctor massa eget scelerisque tincidunt. Sed quis augue massa. Ut vestibulum erat a felis scelerisque, a bibendum mauris blandit. Quisque turpis felis, egestas sed metus eu, molestie ultrices mi. Maecenas nulla odio, rhoncus eu dui sed, sodales gravida velit. </article>
+                </a>
+                </a><a href="#" class="list-group-item">
+                    <h4 class="list-group-item-heading">lorem ipsum</h4>
+                    <article class="list-group-item-heading">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel dolor malesuada, viverra felis vitae, feugiat tortor. Sed varius quis mi et porttitor. Etiam ac dolor in erat semper imperdiet consequat a justo. Maecenas tincidunt sit amet tortor at egestas. Donec tincidunt venenatis dolor, semper tempus lorem imperdiet nec. Proin sed purus non tellus egestas vehicula. Ut at erat risus. Aliquam id ipsum vel dolor dignissim commodo. Aenean commodo sem quis quam maximus, ut imperdiet felis ultrices. Pellentesque ullamcorper ipsum nunc, sit amet viverra dui pulvinar vel. Phasellus auctor massa eget scelerisque tincidunt. Sed quis augue massa. Ut vestibulum erat a felis scelerisque, a bibendum mauris blandit. Quisque turpis felis, egestas sed metus eu, molestie ultrices mi. Maecenas nulla odio, rhoncus eu dui sed, sodales gravida velit. </article>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<footer class="navbar navbar-default navbar-fixed-bottom">
+    <div class="container">
+        <p class="navbar-text pull-left">Footer</p>
+        <a href="https://www.facebook.com/groups/119990741430282/" class="navbar-btn btn btn-primary pull-right">KK-Sisak na Facebooku</a>
+    </div>
+</footer>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="public/js/bootstrap.js"></script>
+
+
+</body>
+</html>

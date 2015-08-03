@@ -1,0 +1,42 @@
+.page-header{
+    margin-top: 0;
+}
+
+.panel-body{
+    padding-top: 0;
+}
+
+.img {
+    margin-bottom: 15px;
+}
+
+.lead{
+    font-size: 18px;
+}
+
+.carousel {
+    padding-bottom: 20px;
+}
+
+#owl-demo .item img{
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.fa-big {
+    font-size: 1.45em;
+}
+.pr-10 {
+    padding-right: 10px;
+}
+.text-colored {
+    color: #55ACEE;
+}
+
+.list-icons {
+    padding: 0px;
+    margin: 20px 0px;
+    list-style: outside none none;
+    font-size: 18px;
+}
