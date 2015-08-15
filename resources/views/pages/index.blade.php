@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head lang="en">
-    <meta charset="UTF-8">
+    <meta charset="UTF-8"> //change to blade
     <title>KK Sisak</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
