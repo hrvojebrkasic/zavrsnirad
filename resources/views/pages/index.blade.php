@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head lang="en">
-    <meta charset="UTF-8"> //change to blade
+    <meta charset="UTF-8">
     <title>KK Sisak</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -86,7 +86,7 @@
         <!-- Wrapper for slides -->
         <div class="carousel-inner">
             <div class="item active">
-                <a href="http://www.basburek.com" target="_blank"><img src="img/bas-burek.jpg" alt="Baš burek"></a>
+                <a href="http://www.basburek.com" target="_blank"><img src="{{asset('img/bas-burek.jpg')}}" alt="Baš burek"></a>
             </div>
             <div class="item">
                 <a href="http://www.sisak.hr" target="_blank"><img src="img/rsz_grad-sisak.jpg" alt="Grad Sisak"></a>
