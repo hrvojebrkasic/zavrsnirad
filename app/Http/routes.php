@@ -11,8 +11,7 @@
 |
 */
 
-Route::get('index', 'PagesController@index');
-Route::get('article', 'PagesController@article');
+Route::get('index', 'ArticlesController@main');
 Route::get('povijest', 'PagesController@povijest');
 Route::get('struka', 'PagesController@struka');
 Route::get('uprava', 'PagesController@uprava');
@@ -25,6 +24,18 @@ Route::get('kadeti', 'PagesController@kadeti');
 Route::get('juniori', 'PagesController@juniori');
 Route::get('raspored', 'PagesController@raspored');
 Route::get('dvorane', 'PagesController@dvorane');
+Route::resource('admin', 'AdminController');
+Route::get('article', 'ArticlesController@index');
+Route::get('article/{slug}', 'ArticlesController@show');
+Route::post('article', 'ArticlesController@store');
+Route::get('admin/leagues/create', 'LeaguesController@create');
+Route::post('admin', 'LeaguesController@store');
+Route::get('admin/leagues/seniori', 'LeaguesController@index');
+
+// Authentication routes
+Route::get('login', 'Auth\AuthController@getLogin');
+Route::post('login', 'Auth\AuthController@postLogin');
+Route::get('logout', 'Auth\AuthController@getLogout');
 
 
 Route::get('/', 'WelcomeController@index');
