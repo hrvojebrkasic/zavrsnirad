@@ -145,6 +145,11 @@ return [
 		'App\Providers\ConfigServiceProvider',
 		'App\Providers\EventServiceProvider',
 		'App\Providers\RouteServiceProvider',
+
+		/**
+		 * 3rd party
+		 */
+		Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
     ],
 
 	/*

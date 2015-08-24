@@ -1,18 +1,19 @@
 @extends('layouts.master')
 @section('content')
     <div class ="container">
-        <div class="slideshow"
+        <div class="cycle-slideshow"
                    data-cycle-fx=carousel
                    data-cycle-timeout=1000
                    data-cycle-carousel-visible=3
                    data-cycle-carousel-fluid=true
                 >
-            <img src="http://malsup.github.io/images/beach1.jpg">
-            <img src="http://malsup.github.io/images/beach2.jpg">
-            <img src="http://malsup.github.io/images/beach3.jpg">
-            <img src="http://malsup.github.io/images/beach4.jpg">
-            <img src="http://malsup.github.io/images/beach5.jpg">
-            <img src="http://malsup.github.io/images/beach9.jpg">
+            <img src="img/agencija-suzi.jpg">
+            <img src="img/autopromet.jpg">
+            <img src="img/bas-burek.jpg">
+            <img src="img/crosig.jpg">
+            <img src="img/rsz_grad-sisak.jpg">
+            <img src="img/hapcic-geo.jpg">
+            <img src="img/logo-crosig.jpg">
         </div>
         <div class="row">
             @foreach($articles as $article)
@@ -24,6 +25,5 @@
             @endforeach
         </div>
         {!! $articles->render() !!}
-
     </div>
 @stop

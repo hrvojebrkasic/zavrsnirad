@@ -6,7 +6,7 @@
 
     <hr/>
 
-    {!! Form::open(['url' => 'admin']) !!}
+    {!! Form::open() !!}
     <div class="form-group">
         {!! Form::label('name', 'League name: ') !!}
         {!! Form::text('name', null, ['class' => 'form-control']) !!}

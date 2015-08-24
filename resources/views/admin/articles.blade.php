@@ -13,6 +13,7 @@
                         <th>ID</th>
                         <th>Title</th>
                         <th>Created At:</th>
+                        <th>Updated At:</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -21,20 +22,20 @@
                             <td>{{ $article->id }}</td>
                             <td>{{ $article->title }}</td>
                             <td>{{ $article->created_at }}</td>
-
+                            <td>{{ $article->updated_at }}</td>
                             <td>
                                 <!-- show the article -->
-                                <a class="btn btn-small btn-success" href="{{ URL::to('admin/' . $article->slug) }}">Show</a>
+                                <a class="btn btn-small btn-success btn-block" href="{{ URL::to('admin/' . $article->slug) }}">Show</a>
                             </td>
                             <td>
                                 <!-- edit this article -->
-                                <a class="btn btn-small btn-info" href="{{ URL::to('admin/' . $article->id . '/edit') }}">Edit</a>
+                                <a class="btn btn-small btn-info btn-block" href="{{ URL::to('admin/' . $article->id . '/edit') }}">Edit</a>
                             </td>
                             <td>
                                 <!-- delete the article -->
                                 {!! Form::open(['url' => 'admin/' . $article->id, 'class' => 'pull-left']) !!}
                                 {!! Form::hidden('_method', 'DELETE') !!}
-                                {!! Form::submit('Delete', array('class' => 'btn btn-warning')) !!}
+                                {!! Form::submit('Delete', array('class' => 'btn btn-warning btn-block')) !!}
                                 {!! Form::close() !!}
                             </td>
                         </tr>

@@ -80,7 +80,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <ul class="sidebar-menu">
                 <li class="header">HEADER</li>
                 <!-- Optionally, you can add icons to the links -->
-{{--                <li class="active"><a href="{{URL::to('admin/create')}}"><span>Articles</span></a></li>--}}
                 <li class="treeview">
                     <a href="#"><span>Articles</span> <i class="fa fa-angle-left pull-right"></i></a>
                     <ul class="treeview-menu">
@@ -95,6 +94,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <li><a href={{URL::to('admin/leagues/seniori')}}>Seniorska liga</a></li>
                     </ul>
                 </li>
+                <li class="treeview">
+                    <a href="#"><span>Teams</span> <i class="fa fa-angle-left pull-right"></i></a>
+                    <ul class="treeview-menu">
+                        <li><a href="{{URL::to('admin/teams/create')}}">Create new teams</a></li>
+                        <li><a href={{URL::to('admin/teams')}}>View all teams</a></li>
+                    </ul>
+                </li>
+                {{--<li><a href="{{URL::to('admin/teams')}}"><span>Teams</span></a></li>--}}
             </ul><!-- /.sidebar-menu -->
         </section>
         <!-- /.sidebar -->

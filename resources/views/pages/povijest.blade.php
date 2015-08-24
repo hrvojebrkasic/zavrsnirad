@@ -13,32 +13,32 @@
             <p>Do 1997.godine u klubu se  igrala samo muška košarka, dok je 1997. formirana i ženska ekipa te svake godine sa tri ekipe sudjelujemo u natjecanju mlađih dobnih kategorija u ženskoj konkurenciji. U sezonama 2002./03. i 2003./04. djevojke su igrale seniorsku A-2 ligu, no nakon te sezone odustalo se od ženske seniorske košarke zbog nedostatka sredstava, te se nastavilo igrati samo mlađim dobnim ženskim kategorijama.  Od 1996. godine klub je 13 puta za redom bio organizator klupskog košarkaškog kampa u Savudriji, mjestu kraj Umaga, gdje je u prosjeku godišnje kamp pohađalo 60-ak polaznika. 2006. i 2007.  juniorske ekipe sudjeluju na međunarodnom juniorskom turniru u Francuskoj koji smo 2006.godine i osvojili.</p>
         </article>
         <div class="row">
-                <div class="col-md-4">
-                    <img src="img/djevojcice.jpg" class="img" width="100%" height="200px">
-                </div>
-                <div class="col-md-4">
-                    <img src="img/klinci.jpg" class="img" width="100%" height="200px">
-                </div>
-                <div class="col-md-4">
-                    <img src="img/mladikadeti.jpg" class="img" width="100%" height="200px">
-                </div>
-                <div class="col-md-4">
-                    <img src="img/kadeti.jpg" class="img" width="100%" height="200px">
-                </div>
-                <div class="col-md-4">
-                    <img src="img/kadeti2.jpg" class="img" width="100%" height="200px">
-                </div>
-                <div class="col-md-4">
-                    <img src="img/juniori.jpg" class="img" width="100%" height="200px">
-                </div>
-                <div class="col-md-4">
-                    <img src="img/juniori2.jpg" class="img" width="100%" height="200px">
-                </div>
-                <div class="col-md-4">
-                    <img src="img/seniori.jpg" class="img" width="100%" height="200px">
-                </div>
+            <div class="col-md-4">
+                <div class="bckgimg" style="background-image: url('img/djevojcice.jpg')"></div>
+            </div>
+            <div class="col-md-4">
+                <div class="bckgimg" style="background-image: url('img/klinci.jpg')"></div>
+            </div>
+            <div class="col-md-4">
+                <div class="bckgimg" style="background-image: url('img/mladikadeti.jpg')"></div>
+            </div>
+            <div class="col-md-4">
+                <div class="bckgimg" style="background-image: url('img/kadeti.jpg')"></div>
+            </div>
+            <div class="col-md-4">
+                <div class="bckgimg" style="background-image: url('img/kadeti2.jpg')"></div>
+            </div>
+            <div class="col-md-4">
+                <div class="bckgimg" style="background-image: url('img/juniori.jpg')"></div>
+            </div>
+            <div class="col-md-4">
+                <div class="bckgimg" style="background-image: url('img/juniori2.jpg')"></div>
+            </div>
+            <div class="col-md-4">
+                <div class="bckgimg" style="background-image: url('img/seniori.jpg')"></div>
+            </div>
+
         </div>
     </div>
-
 
 @stop

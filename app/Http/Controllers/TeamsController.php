@@ -4,11 +4,12 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use App\League;
+use App\Team;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
 
-class LeaguesController extends Controller {
+class TeamsController extends Controller {
 
 	/**
 	 * Display a listing of the resource.
@@ -17,74 +18,39 @@ class LeaguesController extends Controller {
 	 */
 	public function getIndex()
 	{
-//		if($id) {
-//			return $this->doAdmin();
-//		}
-
-//		$league = App::make('League');
-		$league = new League();
-        return view('includes.dashboard', ['league' => $league]);
-    }
-
-	public function getCreate()
-	{
-		return view('admin.leagues.create');
-
+		$teams = Team::latest('created_at')->paginate(20);
+		return view('admin.teams.index', compact('teams'));
 	}
 
-	public function postCreate()
-	{
-		$league = new League;
-//		$league->name = Input::get('name');
-		$input = Input::all();
-		$league->fill($input);
-		$league->save();
-		return Redirect::to('admin');
-	}
-
-	public function getSeniori()
-	{
-		return view('admin.leagues.seniori.index');
-	}
-
-	public function postIndex()
-	{
-//		if($id) {
-//			return $this->doAdmin();
-//		}
-
-//		$league = App::make('League');
-		$league = new League();
-		return view('includes.dashboard', ['league' => $league]);
-	}
-
-	protected function doAdmin()
-	{
-		return view('admin.leagues.seniori.index');
-	}
 
 	/**
 	 * Show the form for creating a new resource.
 	 *
 	 * @return Response
 	 */
-//	public function create()
-//	{
-//        return view('admin.leagues.create');
-//    }
+	public function getCreate()
+	{
+		return view('admin.teams.create');
+	}
+	public function postCreate()
+	{
+		$team = new Team;
+//		$league->name = Input::get('name');
+		$input = Input::all();
+		$team->fill($input);
+		$team->save();
+		return Redirect::to('admin');
+	}
 
 	/**
 	 * Store a newly created resource in storage.
 	 *
 	 * @return Response
 	 */
-//	public function store()
-//	{
-//        $league = new League;
-//        $league->name = Input::get('name');
-//        $league->save();
-//        return Redirect::to('admin');
-//	}
+	public function store()
+	{
+		//
+	}
 
 	/**
 	 * Display the specified resource.

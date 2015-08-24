@@ -10,8 +10,16 @@ class Season extends Model {
 
     public function games()
     {
-        return $this->hasMany('App\Games');
+        return $this->hasMany('App\Game');
     }
 
+    public function leagues()
+    {
+        return $this->belongsTo('App\League');
+    }
 
+    public function round()
+    {
+        return $this->hasMany('App\Round');
+    }
 }

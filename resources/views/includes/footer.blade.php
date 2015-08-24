@@ -5,10 +5,16 @@
     </div>
 </footer>
 
+
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script src="{{URL::to('/js/scripts.js')}}" type="text/javascript"></script>
+<script src="{{URL::to('/js/jquery.cycle2.min.js')}}"></script>
 {{--<script src="'public/js/scripts.js" type="text/javascript"></script>--}}
-<script src="{{URL::asset('public/js/scripts.js')}}" type="text/javascript"></script>
+
 
 </body>
 </html>
+
+

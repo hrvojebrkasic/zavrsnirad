@@ -3,6 +3,19 @@ body{
     padding-bottom: 70px;
 }
 
+table{
+    border-collapse: collapse;
+}
+
+.bckgimg{
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+    height: 350px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
 .page-header{
     margin-top: 0;
 }

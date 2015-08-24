@@ -14,8 +14,18 @@ class Game extends Model {
         return $this->belongsTo('App\Season');
     }
 
-    public function games()
+    public function rounds()
     {
-        //relationship type ????
+        return $this->belongsTo('App\Round');
+    }
+
+    public function homeTeam()
+    {
+        return $this->hasOne('App\Team', 'home_team_id', 'id');
+    }
+
+    public function awayTeam()
+    {
+        return $this->hasOne('App\Team', 'aways_team_id', 'id');
     }
 }

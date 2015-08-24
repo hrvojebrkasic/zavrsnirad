@@ -8,6 +8,8 @@ class League extends Model
         'name',
     ];
 
+    protected $table='leagues';
+
     public function seasons()
     {
         return $this->hasMany('App\Season');
