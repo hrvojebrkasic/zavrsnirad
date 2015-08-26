@@ -14,13 +14,14 @@ class Article extends Model implements SluggableInterface {
     );
 
     protected $fillable =[
+        'user_id',
         'title',
         'content',
     ];
 
     public function media()
     {
-        return $this->hasMany('App\Media');
+        return $this->belongsToMany('App\Media');
     }
 
     public function users()

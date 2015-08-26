@@ -5,6 +5,6 @@
 
     <article>
         {{ $article->content }}
-    </article>
 
+    </article>
 @stop

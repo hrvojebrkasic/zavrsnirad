@@ -53,32 +53,33 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <!-- sidebar: style can be found in sidebar.less -->
         <section class="sidebar">
 
-            <!-- Sidebar user panel (optional) -->
-            <div class="user-panel">
-                <div class="pull-left image">
-                    <img src="{{ asset("/bower_components/admin-lte/dist/img/user2-160x160.jpg") }}" class="img-circle" alt="User Image" />
-                </div>
-                <div class="pull-left info">
-                    <p>Alexander Pierce</p>
-                    <!-- Status -->
-                    <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
-                </div>
-            </div>
+            {{--<!-- Sidebar user panel (optional) -->--}}
+            {{--<div class="user-panel">--}}
+                {{--<div class="pull-left image">--}}
+                    {{--<img src="{{ asset("/bower_components/admin-lte/dist/img/user2-160x160.jpg") }}" class="img-circle" alt="User Image" />--}}
+                {{--</div>--}}
+                {{--<div class="pull-left info">--}}
+                    {{--<p>Alexander Pierce</p>--}}
+                    {{--<!-- Status -->--}}
+                    {{--<a href="#"><i class="fa fa-circle text-success"></i> Online</a>--}}
+                {{--</div>--}}
+            {{--</div>--}}
 
             <!-- search form (Optional) -->
-            <form action="#" method="get" class="sidebar-form">
-                <div class="input-group">
-                    <input type="text" name="q" class="form-control" placeholder="Search..."/>
-          <span class="input-group-btn">
-            <button type='submit' name='search' id='search-btn' class="btn btn-flat"><i class="fa fa-search"></i></button>
-          </span>
-                </div>
-            </form>
+            {{--<form action="#" method="get" class="sidebar-form">--}}
+                {{--<div class="input-group">--}}
+                    {{--<input type="text" name="q" class="form-control" placeholder="Search..."/>--}}
+          {{--<span class="input-group-btn">--}}
+            {{--<button type='submit' name='search' id='search-btn' class="btn btn-flat"><i class="fa fa-search"></i></button>--}}
+          {{--</span>--}}
+                {{--</div>--}}
+            {{--</form>--}}
             <!-- /.search form -->
 
             <!-- Sidebar Menu -->
             <ul class="sidebar-menu">
-                <li class="header">HEADER</li>
+                <li class="header"><a href="{{URL::to('admin')}}">ADMIN</a></li>
+                {{--<li class="header">ADMIN</li>--}}
                 <!-- Optionally, you can add icons to the links -->
                 <li class="treeview">
                     <a href="#"><span>Articles</span> <i class="fa fa-angle-left pull-right"></i></a>
@@ -91,6 +92,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <a href="#"><span>Leagues</span> <i class="fa fa-angle-left pull-right"></i></a>
                     <ul class="treeview-menu">
                         <li><a href="{{URL::to('admin/leagues/create')}}">Create new league</a></li>
+                        <li><a href="{{URL::to('admin/leagues')}}">Show all leagues</a></li>
                         <li><a href={{URL::to('admin/leagues/seniori')}}>Seniorska liga</a></li>
                     </ul>
                 </li>
@@ -135,6 +137,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <!-- jQuery 2.1.3 -->
 {{--<script src="{{ asset ("/bower_components/admin-lte/plugins/jQuery/jQuery-2.1.3.min.js") }}"></script>--}}
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="{{URL::to('js/custom.jquery.js')}}" type="text/javascript"></script>
 
 <!-- Bootstrap 3.3.2 JS -->
 <script src="{{ asset ("/bower_components/admin-lte/bootstrap/js/bootstrap.min.js") }}" type="text/javascript"></script>

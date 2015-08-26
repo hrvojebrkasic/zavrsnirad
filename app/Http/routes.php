@@ -27,18 +27,19 @@ Route::get('dvorane', 'PagesController@dvorane');
 Route::get('article', 'ArticlesController@index');
 Route::get('article/{slug}', 'ArticlesController@show');
 Route::post('article', 'ArticlesController@store');
-//Route::get('admin/leagues/create', 'LeaguesController@create');
-//Route::post('admin', 'LeaguesController@store');
-//Route::get('admin/leagues/seniori', 'LeaguesController@index');
 
-Route::controller('admin/leagues', 'LeaguesController');
-Route::controller('admin/teams', 'TeamsController');
-Route::resource('admin', 'AdminController');
+Route::group(array('prefix' => 'admin', 'middleware' =>'auth'),
+    function(){
+//        Route::controller('articles', 'AdminController');
+        Route::controller('leagues', 'LeaguesController');
+        Route::controller('teams', 'TeamsController');
+        Route::controller('/', 'AdminController');
+    }
+);
 
-
-// Authentication routes
-Route::get('login', 'Auth\AuthController@getLogin');
-Route::post('login', 'Auth\AuthController@postLogin');
+Route::get('/auth/login', 'Auth\AuthController@getLogin');
+Route::post('/auth/login', 'Auth\AuthController@postLogin');
+Route::post('/auth/register', 'Auth\AuthController@postRegister');
 Route::get('logout', 'Auth\AuthController@getLogout');
 
 

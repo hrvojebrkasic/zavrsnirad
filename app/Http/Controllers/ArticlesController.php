@@ -5,6 +5,9 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use App\Http\Requests\CreateArticleRequest;
+use App\Media;
+use Auth;
+use Input;
 
 class ArticlesController extends Controller {
 
@@ -15,7 +18,7 @@ class ArticlesController extends Controller {
      */
 	public function index(){
         $articles = Article::latest('created_at')->paginate(3);
-        $articles->setPath('/kksisak/public/article');
+        $articles->setPath('/article');
         return view('articles.index', compact('articles'));
     }
 
@@ -25,7 +28,7 @@ class ArticlesController extends Controller {
      */
     public function main(){
         $articles = Article::latest('created_at')->paginate(4);
-        $articles->setPath('/kksisak/public/index');
+        $articles->setPath('/index');
         return view('pages.index', compact('articles'));
     }
 
@@ -47,7 +50,25 @@ class ArticlesController extends Controller {
      */
     public function store(CreateArticleRequest $request){
 
-        Article::create($request->all());
+        $destinationPath = public_path().'/img/';
+//        Input::file('photo')->move($destinationPath);
+        $article = new Article;
+        $article->fill(Input::all());
+        $article->user_id = Auth::user()->id;
+        $article->save();
+//        $media = new Media;
+//        $media->article_id = $article->id;
+//        $extension = Input::file('photo')->getClientOriginalExtension();
+//        $media->file_name = rand(10000, 99999).'.'.$extension;
+//        $media->save();
+        $files = Media::all();
+        foreach ($files as $file) {
+            $media = new Media;
+            $extension = $media->getClientOriginalExtension();
+            $media->file_name = rand(10000, 99999).'.'.$extension;
+            $media->save();
+            $article->media()->attach($media->id);
+        }
 
         return redirect('article');
     }

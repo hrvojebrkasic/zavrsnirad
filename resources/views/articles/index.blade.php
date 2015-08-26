@@ -13,7 +13,11 @@
                                     <small>{{$article->created_at}}</small>
                                 </h3>
                             </div>
-                            {{--<img class="img" src="img/nature.jpg" width="100%">--}}
+                            {{--@foreach($article->id as $id)--}}
+                                {{--<img class="img" src="img/nature.jpg" width="100%">--}}
+                            {{ Html::image('public/img/', $article->media->first()->fileName) }}
+
+                            {{--@endforeach--}}
 {{--                            {{ HTML::image('/img/'.$item->images->first()->file_name, imageAlt($item->images->first()->file_name), ['class' => 'thumbnail img-responsive lazy']) }}--}}
                             <article>{{ $article->content }}</article>
                         </div>

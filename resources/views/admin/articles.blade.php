@@ -25,18 +25,15 @@
                             <td>{{ $article->updated_at }}</td>
                             <td>
                                 <!-- show the article -->
-                                <a class="btn btn-small btn-success btn-block" href="{{ URL::to('admin/' . $article->slug) }}">Show</a>
+                                <a class="btn btn-small btn-success btn-block" href="{{ URL::to('admin/show/' . $article->slug) }}">Show</a>
                             </td>
                             <td>
                                 <!-- edit this article -->
-                                <a class="btn btn-small btn-info btn-block" href="{{ URL::to('admin/' . $article->id . '/edit') }}">Edit</a>
+                                <a class="btn btn-small btn-info btn-block" href="{{ URL::to('admin/edit/' . $article->id) }}">Edit</a>
                             </td>
                             <td>
                                 <!-- delete the article -->
-                                {!! Form::open(['url' => 'admin/' . $article->id, 'class' => 'pull-left']) !!}
-                                {!! Form::hidden('_method', 'DELETE') !!}
-                                {!! Form::submit('Delete', array('class' => 'btn btn-warning btn-block')) !!}
-                                {!! Form::close() !!}
+                                <a class="btn btn-small btn-warning btn-block" href="{{ URL::to('admin/delete/' . $article->id) }}">Delete</a>
                             </td>
                         </tr>
                     @endforeach

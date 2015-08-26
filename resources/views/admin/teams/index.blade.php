@@ -26,7 +26,7 @@
                             </td>
                             <td>
                                 <!-- edit this team -->
-                                <a class="btn btn-small btn-info btn-block" href="{{ URL::to('admin//teams' . $team->id . '/edit') }}">Edit</a>
+                                <a class="btn btn-small btn-info btn-block" href="{{ URL::to('admin//teams/' . $team->id . '/edit') }}">Edit</a>
                             </td>
                             <td>
                                 <!-- delete the team -->

@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
+use Route;
 
 class AdminController extends Controller {
 
@@ -14,7 +15,7 @@ class AdminController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function index()
+	public function getIndex()
 	{
         $articles = Article::latest('created_at')->paginate(20);
         $articles->setPath('/admin/articles');
@@ -26,7 +27,7 @@ class AdminController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function create()
+	public function getCreate()
 	{
         return view('admin.create');
 
@@ -48,7 +49,7 @@ class AdminController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function show($slug)
+	public function getShow($slug)
 	{
         $article = Article::findBySlugOrFail($slug);
         return view('admin.show', compact('article'));
@@ -60,8 +61,10 @@ class AdminController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function edit($id)
+	public function getEdit($id)
 	{
+//		var_dump(Route::currentRouteName());
+//		dd();
         $article = Article::find($id);
         return view('admin.edit', compact('article'));
 	}
@@ -72,7 +75,7 @@ class AdminController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update($id)
+	public function postEdit($id)
 	{
         $rules = array(
             'title' => 'required',
@@ -80,8 +83,8 @@ class AdminController extends Controller {
         );
 
         $article = Article::findOrFail($id);
-        $article->title       = Input::get('title');
-        $article->content      = Input::get('content');
+        $article->title = Input::get('title');
+        $article->content = Input::get('content');
         $article->save();
 
         return redirect('admin');
@@ -93,7 +96,7 @@ class AdminController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function destroy($id)
+	public function getDelete($id)
 	{
 		$article = Article::find($id);
         $article->destroy($id);

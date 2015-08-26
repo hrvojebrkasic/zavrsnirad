@@ -7,6 +7,7 @@
     <hr/>
 
     {!! Form::open(['url' => 'article', 'files'=>true]) !!}
+
         <div class="form-group">
             {!! Form::label('title', 'Article title: ') !!}
             {!! Form::text('title', null, ['class' => 'form-control']) !!}
@@ -19,7 +20,8 @@
 
         <div class="form-group">
             {!! Form::label('Image: ') !!}
-            {!! Form::file('image', null) !!}
+            {{--{!! Form::file('photo') !!}--}}
+            {!! Form::file('photos[]', array('multiple'=>'true','id'=>'image-input','class'=>'file')) !!}
         </div>
 
         <div class="form-group">

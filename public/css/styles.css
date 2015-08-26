@@ -7,6 +7,17 @@ table{
     border-collapse: collapse;
 }
 
+.cycle-slideshow {
+    margin-left: auto;
+    width: 80%;
+}
+
+.cycle-slideshow img{
+    width: 80%;
+    height: 90%;
+}
+
+
 .bckgimg{
     background-repeat: no-repeat;
     background-position: top;

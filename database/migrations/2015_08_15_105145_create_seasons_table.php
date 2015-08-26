@@ -15,7 +15,8 @@ class CreateSeasonsTable extends Migration {
 		Schema::create('seasons', function(Blueprint $table)
 		{
 			$table->increments('id');
-            $table->integer('league_id');
+            $table->integer('league_id')->unsigned();
+			$table->foreign('league_id')->references('id')->on('leagues');;
             $table->integer('year');
 			$table->timestamps();
 		});

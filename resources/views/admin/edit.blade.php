@@ -2,18 +2,16 @@
 
 @section('content')
 
-    {!! Form::model($article,[
-        'method' => 'PATCH',
-        'route' => ['admin.update', $article->id] ]) !!}
+    {!! Form::open() !!}
 
     <div class="form-group">
         {!! Form::label('title', 'Article title: ') !!}
-        {!! Form::text('title', null, ['class' => 'form-control']) !!}
+        {!! Form::text('title', $article->title, ['class' => 'form-control']) !!}
     </div>
 
     <div class="form-group">
         {!! Form::label('content', 'Content: ') !!}
-        {!! Form::textarea('content', null, ['class' => 'form-control']) !!}
+        {!! Form::textarea('content', $article->content, ['class' => 'form-control']) !!}
     </div>
 
     <div class="form-group">
