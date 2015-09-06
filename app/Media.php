@@ -9,9 +9,9 @@ class Media extends Model {
         'file_name',
     ];
 
-    public function articles()
+    public function article()
     {
-        return $this->belongsToMany('App\Article');
+        return $this->belongsTo('App\Article');
 	}
 
 }

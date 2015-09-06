@@ -136,6 +136,9 @@ return [
 		'Illuminate\View\ViewServiceProvider',
         'Collective\Html\HtmlServiceProvider',
         'Cviebrock\EloquentSluggable\SluggableServiceProvider',
+		'Intervention\Image\ImageServiceProvider',
+
+
 
         /*
          * Application Service Providers...
@@ -199,8 +202,11 @@ return [
 		'View'      => 'Illuminate\Support\Facades\View',
         'Form' => 'Collective\Html\FormFacade',
         'Html' => 'Collective\Html\HtmlFacade',
+		'Image' => 'Intervention\Image\Facades\Image'
 
 
-	],
+
+
+],
 
 ];

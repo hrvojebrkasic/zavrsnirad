@@ -47,6 +47,14 @@ class LeaguesController extends Controller {
 		return view('admin.leagues.seniori.index');
 	}
 
+	public function postSeniori()
+	{
+//		@foreach ( as ) {
+//
+//		}
+		
+	}
+
 	public function postIndex()
 	{
 //		if($id) {

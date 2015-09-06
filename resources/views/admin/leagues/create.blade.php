@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <h1>Create new league</h1>
+    <h1>Stvori novu ligu</h1>
 
     <hr/>
 

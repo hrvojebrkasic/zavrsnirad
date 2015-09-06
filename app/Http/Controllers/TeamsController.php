@@ -5,6 +5,7 @@ use App\Http\Controllers\Controller;
 
 use App\League;
 use App\Team;
+use DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
@@ -18,7 +19,7 @@ class TeamsController extends Controller {
 	 */
 	public function getIndex()
 	{
-		$teams = Team::latest('created_at')->paginate(20);
+		$teams = Team::orderBy('league_id', 'asc')->get();
 		return view('admin.teams.index', compact('teams'));
 	}
 
@@ -30,7 +31,13 @@ class TeamsController extends Controller {
 	 */
 	public function getCreate()
 	{
-		return view('admin.teams.create');
+		//povuci popis liga i proslijedi u view
+		$list=array();
+		$leagues = League::all();
+		foreach ($leagues as $league) {
+			$list[$league->id] = $league->name;
+		}
+		return view('admin.teams.create', compact('list'));
 	}
 	public function postCreate()
 	{
@@ -41,6 +48,16 @@ class TeamsController extends Controller {
 		$team->save();
 		return Redirect::to('admin');
 	}
+
+	public function getDelete($id)
+	{
+		$team = Team::find($id);
+		$team->destroy($id);
+
+		return redirect('admin');
+	}
+
+
 
 	/**
 	 * Store a newly created resource in storage.

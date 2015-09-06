@@ -2,8 +2,8 @@
 @section('content')
 
     <div class="container">
-        <div class="row">
-            <div class="col-sm-8">
+        <div class="row" >
+            <div class="col-sm-7">
                 @foreach($articles as $article)
                     <div class="panel panel-default">
                         <div class="panel-body">
@@ -13,27 +13,22 @@
                                     <small>{{$article->created_at}}</small>
                                 </h3>
                             </div>
-                            {{--@foreach($article->id as $id)--}}
-                                {{--<img class="img" src="img/nature.jpg" width="100%">--}}
-                            {{ Html::image('public/img/', $article->media->first()->fileName) }}
-
-                            {{--@endforeach--}}
-{{--                            {{ HTML::image('/img/'.$item->images->first()->file_name, imageAlt($item->images->first()->file_name), ['class' => 'thumbnail img-responsive lazy']) }}--}}
-                            <article>{{ $article->content }}</article>
+{{--                            <img class="img" src="{{URL::asset('/img/'.$article->medias->first()->file_name)}}" width="60%">--}}
+                            <p>{{ str_limit($article->content, $limit = 300, $end = '...') }}</p>
+                            <a href="{{ url('/article', $article->slug) }}" class="btn btn-default">Više</a>
                         </div>
                     </div>
                 @endforeach
             </div>
-            <div class="col-sm-4">
-                <div class="list-group-item">
-                    @foreach($articles as $article)
-                    <a href="{{ url('/article', $article->slug) }}">
-                        <h4 class="list-group-item-heading">{{ $article->title }}</h4></a>
-                        <article class="list-group-item-heading">
-                            {{ $article->content }}
-                        </article>
-                    @endforeach
-                </div>
+            <div class="col-sm-5">
+                <ul class="list-group-item">
+                    <li><a href="http://www.auto-promet-sisak.hr/" target="_blank"><img class="bckgimg2" src="img/autopromet.jpg"></a></li>
+                    <li><a href="http://www.cindric.hr/o-nama/dodatne-usluge/agencija-za-zastupanje-u-osiguranju-suzi" target="_blank"><img class="bckgimg2" src="img/agencija-suzi.jpg"></a></li>
+                    <li><a href="http://www.sisak.hr/" target="_blank"><img class="bckgimg2" src="img/sisak.jpg"></a></li>
+                    <li><a href="http://www.basburek.com/" target="_blank"><img class="bckgimg2" src="img/bas-burek.jpg"></a></li>
+                    <li><a href="http://www.crosig.hr/" target="_blank"><img class="bckgimg2" src="img/crosig.jpg"></a></li>
+                    <li><a href="http://www.hapcic.hr/" target="_blank"><img class="bckgimg2" src="img/hapcic.png"></a></li>
+                </ul>
             </div>
         </div>
     </div>

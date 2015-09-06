@@ -15,7 +15,14 @@
     </div>
 
     <div class="form-group">
-        {!! Form::submit('Edit article', null, ['class' => 'btn btn-submit form-control']) !!}
+        @foreach($article->medias as $media)
+            <img src="{{URL::asset('/img/'.$media->file_name)}}">
+        @endforeach
+            {!! Form::file('photo[]', array('multiple'=>'true','class'=>'file')) !!}
+    </div>
+
+    <div class="form-group">
+        {!! Form::submit('Izmijeni članak', null, ['class' => 'btn btn-submit form-control']) !!}
     </div>
     {!! Form::close() !!}
 

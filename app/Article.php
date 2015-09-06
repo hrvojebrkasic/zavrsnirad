@@ -19,9 +19,20 @@ class Article extends Model implements SluggableInterface {
         'content',
     ];
 
-    public function media()
+    public static $rules = array(
+        'title' => 'required|between:1,255|unique:news',
+        'content' => 'required'
+    );
+
+    public static $messages = array(
+        'title.required' => 'Naslov vijesti je obavezan.',
+        'title.between' => 'Naslov mora biti kraći od 255 znakova.',
+        'content.required' => 'Tekst vijesti je obavezan.'
+    );
+
+    public function medias()
     {
-        return $this->belongsToMany('App\Media');
+        return $this->hasMany('App\Media');
     }
 
     public function users()

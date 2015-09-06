@@ -3,17 +3,16 @@
 @section('content')
 
     <div class="container-fluid">
-        <h1>List of all articles</h1>
+        <h1>Popis članaka</h1>
         <div class="col-md-8">
-            <h2>Table</h2>
             <div class="table-responsive">
                 <table class="table">
                     <thead>
                     <tr>
                         <th>ID</th>
-                        <th>Title</th>
-                        <th>Created At:</th>
-                        <th>Updated At:</th>
+                        <th>Naslov</th>
+                        <th>Kreirano:</th>
+                        <th>Izmjenjeno:</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -25,15 +24,15 @@
                             <td>{{ $article->updated_at }}</td>
                             <td>
                                 <!-- show the article -->
-                                <a class="btn btn-small btn-success btn-block" href="{{ URL::to('admin/show/' . $article->slug) }}">Show</a>
+                                <a class="btn btn-small btn-success btn-block" href="{{ URL::to('admin/show/' . $article->slug) }}">Prikaži</a>
                             </td>
                             <td>
                                 <!-- edit this article -->
-                                <a class="btn btn-small btn-info btn-block" href="{{ URL::to('admin/edit/' . $article->id) }}">Edit</a>
+                                <a class="btn btn-small btn-info btn-block" href="{{ URL::to('admin/edit/' . $article->id) }}">Izmijeni</a>
                             </td>
                             <td>
                                 <!-- delete the article -->
-                                <a class="btn btn-small btn-warning btn-block" href="{{ URL::to('admin/delete/' . $article->id) }}">Delete</a>
+                                <a class="btn btn-small btn-warning btn-block" href="{{ URL::to('admin/delete/' . $article->id) }}">Obriši</a>
                             </td>
                         </tr>
                     @endforeach

@@ -8,27 +8,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <meta charset="UTF-8">
     <title>KK Sisak | Dashboard</title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
-    <!-- Bootstrap 3.3.2 -->
     <link href="{{ asset("/bower_components/admin-lte/bootstrap/css/bootstrap.css") }}" rel="stylesheet" type="text/css" />
-    <!-- Font Awesome Icons -->
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-    <!-- Ionicons -->
     <link href="http://code.ionicframework.com/ionicons/2.0.0/css/ionicons.min.css" rel="stylesheet" type="text/css" />
-    <!-- Theme style -->
     <link href="{{ asset("/bower_components/admin-lte/dist/css/AdminLTE.min.css")}}" rel="stylesheet" type="text/css" />
-    <!-- AdminLTE Skins. We have chosen the skin-blue for this starter
-          page. However, you can choose any other skin. Make sure you
-          apply the skin class to the body tag so the changes take effect.
-    -->
 
     <link href="{{ asset("/bower_components/admin-lte/dist/css/skins/skin-blue.min.css")}}" rel="stylesheet" type="text/css" />
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-    <![endif]-->
 </head>
 <body class="skin-blue">
 <div class="wrapper">
@@ -47,95 +35,64 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </a>
         </nav>
     </header>
-    <!-- Left side column. contains the logo and sidebar -->
     <aside class="main-sidebar">
 
-        <!-- sidebar: style can be found in sidebar.less -->
         <section class="sidebar">
 
-            {{--<!-- Sidebar user panel (optional) -->--}}
-            {{--<div class="user-panel">--}}
-                {{--<div class="pull-left image">--}}
-                    {{--<img src="{{ asset("/bower_components/admin-lte/dist/img/user2-160x160.jpg") }}" class="img-circle" alt="User Image" />--}}
-                {{--</div>--}}
-                {{--<div class="pull-left info">--}}
-                    {{--<p>Alexander Pierce</p>--}}
-                    {{--<!-- Status -->--}}
-                    {{--<a href="#"><i class="fa fa-circle text-success"></i> Online</a>--}}
-                {{--</div>--}}
-            {{--</div>--}}
-
-            <!-- search form (Optional) -->
-            {{--<form action="#" method="get" class="sidebar-form">--}}
-                {{--<div class="input-group">--}}
-                    {{--<input type="text" name="q" class="form-control" placeholder="Search..."/>--}}
-          {{--<span class="input-group-btn">--}}
-            {{--<button type='submit' name='search' id='search-btn' class="btn btn-flat"><i class="fa fa-search"></i></button>--}}
-          {{--</span>--}}
-                {{--</div>--}}
-            {{--</form>--}}
-            <!-- /.search form -->
-
-            <!-- Sidebar Menu -->
             <ul class="sidebar-menu">
                 <li class="header"><a href="{{URL::to('admin')}}">ADMIN</a></li>
-                {{--<li class="header">ADMIN</li>--}}
-                <!-- Optionally, you can add icons to the links -->
                 <li class="treeview">
-                    <a href="#"><span>Articles</span> <i class="fa fa-angle-left pull-right"></i></a>
+                    <a href="#"><span>Članci</span> <i class="fa fa-angle-left pull-right"></i></a>
                     <ul class="treeview-menu">
-                        <li><a href="{{URL::to('admin/articles')}}">All articles</a></li>
-                        <li><a href="{{URL::to('admin/create')}}">Create new article</a></li>
+                        <li><a href="{{URL::to('admin/create')}}">Dodaj novi članak</a></li>
+{{--                        <li><a href="{{URL::to('admin/articles')}}">All articles</a></li>--}}
                     </ul>
                 </li>
                 <li class="treeview">
-                    <a href="#"><span>Leagues</span> <i class="fa fa-angle-left pull-right"></i></a>
+                    <a href="#"><span>Lige</span> <i class="fa fa-angle-left pull-right"></i></a>
                     <ul class="treeview-menu">
-                        <li><a href="{{URL::to('admin/leagues/create')}}">Create new league</a></li>
-                        <li><a href="{{URL::to('admin/leagues')}}">Show all leagues</a></li>
-                        <li><a href={{URL::to('admin/leagues/seniori')}}>Seniorska liga</a></li>
+                        <li><a href="{{URL::to('admin/leagues/create')}}">Dodaj novu ligu</a></li>
+                        {{--<li><a href={{URL::to('admin/leagues/seniori')}}>Seniorska liga</a></li>--}}
                     </ul>
                 </li>
                 <li class="treeview">
-                    <a href="#"><span>Teams</span> <i class="fa fa-angle-left pull-right"></i></a>
+                    <a href="#"><span>Ekipe</span> <i class="fa fa-angle-left pull-right"></i></a>
                     <ul class="treeview-menu">
-                        <li><a href="{{URL::to('admin/teams/create')}}">Create new teams</a></li>
-                        <li><a href={{URL::to('admin/teams')}}>View all teams</a></li>
+                        <li><a href="{{URL::to('admin/teams/create')}}">Dodaj novu ekipu</a></li>
+                        <li><a href={{URL::to('admin/teams')}}>Popis svih ekipa</a></li>
                     </ul>
                 </li>
-                {{--<li><a href="{{URL::to('admin/teams')}}"><span>Teams</span></a></li>--}}
-            </ul><!-- /.sidebar-menu -->
+                <li class="treeview">
+                    <a href="#"><span>Utakmice</span> <i class="fa fa-angle-left pull-right"></i></a>
+                    <ul class="treeview-menu">
+                        <li><a href="{{URL::to('admin/games/create')}}">Dodaj utakmicu</a></li>
+                        <li><a href={{URL::to('admin/games')}}>Popis utakmica</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="{{URL::to('/auth/logout')}}">Logout</a>
+                </li>
+            </ul>
         </section>
-        <!-- /.sidebar -->
     </aside>
 
-    <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
-        <!-- Main content -->
         <section class="content">
 
             @yield('content')
 
+        </section>
+    </div>
 
-        </section><!-- /.content -->
-    </div><!-- /.content-wrapper -->
-
-    <!-- Main Footer -->
     <footer class="main-footer">
-        <!-- To the right -->
         <div class="pull-right hidden-xs">
-            Anything you want
+            {{--Anything you want--}}
         </div>
         <!-- Default to the left -->
         <strong>Copyright © 2015 <a href="#">Hrvoje Brkašić</a>.</strong> All rights reserved.
     </footer>
 
-</div><!-- ./wrapper -->
-
-<!-- REQUIRED JS SCRIPTS -->
-
-<!-- jQuery 2.1.3 -->
-{{--<script src="{{ asset ("/bower_components/admin-lte/plugins/jQuery/jQuery-2.1.3.min.js") }}"></script>--}}
+</div>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 <script src="{{URL::to('js/custom.jquery.js')}}" type="text/javascript"></script>
 
@@ -144,8 +101,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <!-- AdminLTE App -->
 <script src="{{ asset ("/bower_components/admin-lte/dist/js/app.min.js") }}" type="text/javascript"></script>
 
-<!-- Optionally, you can add Slimscroll and FastClick plugins.
-      Both of these plugins are recommended to enhance the
-      user experience -->
+@yield('beforeBodyEnd')
 </body>
 </html>

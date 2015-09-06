@@ -8,6 +8,8 @@ use App\Http\Requests\CreateArticleRequest;
 use App\Media;
 use Auth;
 use Input;
+use Intervention\Image\Facades\Image;
+use Validator;
 
 class ArticlesController extends Controller {
 
@@ -16,7 +18,7 @@ class ArticlesController extends Controller {
      * Function that returns articles on public/article
      * @return \Illuminate\View\View
      */
-	public function index(){
+    public function index(){
         $articles = Article::latest('created_at')->paginate(3);
         $articles->setPath('/article');
         return view('articles.index', compact('articles'));
@@ -50,24 +52,35 @@ class ArticlesController extends Controller {
      */
     public function store(CreateArticleRequest $request){
 
-        $destinationPath = public_path().'/img/';
-//        Input::file('photo')->move($destinationPath);
         $article = new Article;
         $article->fill(Input::all());
         $article->user_id = Auth::user()->id;
+//
+//        $validator = Validator::make($article, Article::$rules, Article::$messages);
+//        if($validator->fails()){
+//            $error_list = $validator->messages();
+//        }
+
         $article->save();
-//        $media = new Media;
-//        $media->article_id = $article->id;
-//        $extension = Input::file('photo')->getClientOriginalExtension();
-//        $media->file_name = rand(10000, 99999).'.'.$extension;
-//        $media->save();
-        $files = Media::all();
-        foreach ($files as $file) {
-            $media = new Media;
-            $extension = $media->getClientOriginalExtension();
-            $media->file_name = rand(10000, 99999).'.'.$extension;
-            $media->save();
-            $article->media()->attach($media->id);
+
+        $destinationPath = public_path().'/img/';
+        $files = Input::file('photo');
+        if($files[0] != null){
+            foreach ($files as $file) {
+                $media = new Media;
+                $extension = $file->getClientOriginalExtension();
+                $file_name = rand(10000, 99999).'.'.$extension;
+                $file->move($destinationPath, $file_name);
+                $file_resize = Image::make($destinationPath.$file_name);
+                $file_resize->resize(300, null, function($constraint) {
+                    $constraint->aspectRatio();
+                    $constraint->upsize();
+                });
+                $file_resize->save();
+                $media->file_name = $file_name;
+                $media->article_id = $article->id;
+                $media->save();
+            }
         }
 
         return redirect('article');
@@ -75,11 +88,11 @@ class ArticlesController extends Controller {
 
 
     public function edit($id){
-        
+
     }
 
     public function update($id){
-        
+
     }
 
     public function destroy($id){

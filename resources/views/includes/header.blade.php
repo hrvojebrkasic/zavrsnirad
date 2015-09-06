@@ -7,12 +7,14 @@
 
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
     <link href="{{ URL::asset('/css/styles.css') }}" rel="stylesheet">
+    <link href="{{ URL::asset('/css/lightbox/lightbox.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 </head>
 <body>
 <!-- start of navigation -->
 <div class="navbar navbar-inverse navbar-fixed-top">
     <div class="container">
+        {{--<img src="img/small_logo.png" style="display:block;">--}}
         <a href="{{URL::to('index')}}" class="navbar-brand">KK Sisak</a>
         <button class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
             <span class = "icon-bar"></span>
@@ -51,11 +53,15 @@
                 <li class = "dropdown">
                     <a href="#" class ="dropdown-toggle" data-toggle="dropdown">Treninzi <b class="caret"></b></a>
                     <ul class="dropdown-menu">
+                        <li><a href="{{URL::to('treneri')}}">Treneri</a></li>
                         <li><a href="{{URL::to('raspored')}}">Raspored</a></li>
                         <li><a href="{{URL::to('dvorane')}}">Dvorane</a></li>
                     </ul>
                 </li>
                 <li><a href="#contact" data-toggle="modal">Kontakt</a></li>
+                @if (Auth::check())
+                    <li><a href="{{URL::to('/auth/logout')}}">Logout</a></li>
+                @endif
             </ul>
         </nav>
     </div>
@@ -75,7 +81,7 @@
                         <ul class="list-icons">
                             <li title="Adresa">
                                 <i class="fa fa-map-marker pr-10 fa-big text-colored"></i>
-                                Stjepana i Antuna Radića 41, Sisak
+                                &nbsp;Stjepana i Antuna Radića 41, Sisak
                             </li>
                             <li title="Telefon1">
                                 <i class="fa fa-phone pr-10 fa-big text-colored"></i>
@@ -97,7 +103,7 @@
                     </address>
                 </div>
                 <div class="row">
-                    <form role="form" action="" method="post">
+                    <form role="form" name="mailForm" action="" method="post" onsubmit="sendMail(); return false;">
                         <div class="col-md-12">
                             <!--<div class="well well-sm"><strong><i class="glyphicon glyphicon-ok form-control-feedback"></i> Required Field</strong></div>-->
                             <div class="form-group">
@@ -115,15 +121,44 @@
                                 <textarea name="InputMessage" id="InputMessage" class="form-control" rows="5"
                                           required></textarea>
                             </div>
-                            <div class="form-group">
-                                <label for="InputReal">What is 4+3? (Simple Spam Checker)</label>
-                                <input type="text" class="form-control" name="InputReal" id="InputReal" required>
-                            </div>
                             <input type="submit" name="submit" id="submit" value="Submit"
                                    class="btn btn-info pull-right">
                         </div>
                     </form>
                 </div>
+                <script>
+                    function sendMail(){
+                        var name = document.forms["mailForm"]["InputName"].value;
+                        var email = document.forms["mailForm"]["InputEmail"].value;
+                        var message = document.forms["mailForm"]["InputMessage"].value;
+                        var _token = "<?php echo csrf_token(); ?>";
+                        if (name == null || name == "") {
+                            alert("Name must be filled out");
+                            return false;
+                        }
+
+                        if (email == null || email == "") {
+                            alert("Email must be filled out");
+                            return false;
+                        }
+
+                        if (message == null || message == "") {
+                            alert("Message must be filled out");
+                            return false;
+                        }
+
+                        $.ajax({
+                            type: "POST",
+                            url: "{{ URL::to('email')}}",
+                            data: {name : name, email : email, message : message, _token : _token },
+                            success: function(data){
+                                console.log(data);
+                                alert('success');
+                            },
+//            dataType: dataType
+                        });
+                    }
+                </script>
             </div>
         </div>
     </div>

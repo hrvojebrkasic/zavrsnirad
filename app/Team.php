@@ -18,4 +18,9 @@ class Team extends Model {
     {
         return $this->hasOne('App\League', 'id', 'league_id');
     }
+
+//    public function totalGames()
+//    {
+//        return Team::
+//    }
 }

@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <h1>Write new article</h1>
+    <h1>Novi članak</h1>
 
     <hr/>
 
@@ -21,7 +21,7 @@
         <div class="form-group">
             {!! Form::label('Image: ') !!}
             {{--{!! Form::file('photo') !!}--}}
-            {!! Form::file('photos[]', array('multiple'=>'true','id'=>'image-input','class'=>'file')) !!}
+            {!! Form::file('photo[]', array('multiple'=>'true','class'=>'file')) !!}
         </div>
 
         <div class="form-group">

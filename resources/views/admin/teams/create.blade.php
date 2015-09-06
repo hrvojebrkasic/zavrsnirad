@@ -2,14 +2,15 @@
 
 @section('content')
 
-    <h1>Create new teams</h1>
+    <h1>Dodaj novu ekipu</h1>
 
     <hr/>
 
     {!! Form::open() !!}
     <div class="form-group">
         {!! Form::label('league_id', 'League ID: ') !!}
-        {!! Form::text('league_id', null, ['class' => 'form-control']) !!}
+{{--        {!! Form::text('league_id', null, ['class' => 'form-control']) !!}--}}
+        {!! Form::select('league_id', $list, ['class' => 'form-control']) !!}
     </div>
     <div class="form-group">
         {!! Form::label('team_name', 'Team name: ') !!}
